@@ -1,10 +1,13 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import toast from "react-hot-toast"
+
 import "./App.css"
 // Redux
 import { useDispatch, useSelector } from "react-redux"
 // React Router
 import { Route, Routes, useNavigate } from "react-router-dom"
 
+import harshPic from "./assets/Images/harshPic.jpeg"
 // Components
 import Navbar from "./components/Common/Navbar"
 import OpenRoute from "./components/core/Auth/OpenRoute"
@@ -38,6 +41,7 @@ import { ACCOUNT_TYPE } from "./utils/constants"
 function App() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const [toastStatus, settoastStatus] = useState(true)
   const { user } = useSelector((state) => state.profile)
 
   useEffect(() => {
@@ -47,6 +51,40 @@ function App() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  if (toastStatus) {
+    toast.custom(
+      (t) => (
+        <div
+          className={`${
+            t.visible ? "animate-enter" : "animate-leave"
+          } pointer-events-auto flex w-full max-w-md rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5`}
+        >
+          <div className="w-0 flex-1 p-4">
+            <div className="flex items-start">
+              <div className="flex-shrink-0 pt-0.5">
+                <img className="h-10 w-10 rounded-full" src={harshPic} alt="" />
+              </div>
+              <div className="ml-3 flex-1">
+                <p className="text-gray-900 text-sm font-medium">
+                  Harsh Sindhu
+                </p>
+                <p className="text-gray-500 mt-1 text-sm">
+                  The backend server is hosted on a free service, and it may
+                  take 8-10 seconds to initialize initially. We apologize for
+                  any inconvenience this may cause.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      {
+        duration: 3000,
+      }
+    )
+    settoastStatus(false)
+  }
 
   return (
     <div className="flex min-h-screen w-screen flex-col bg-richblack-900 font-inter">
