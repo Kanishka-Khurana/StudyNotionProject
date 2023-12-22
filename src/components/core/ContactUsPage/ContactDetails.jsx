@@ -8,20 +8,19 @@ const contactDetails = [
     icon: "HiChatBubbleLeftRight",
     heading: "Chat on us",
     description: "Our friendly team is here to help.",
-    details: "info@studynotion.com",
+    details: "harshsindhupvt@gmail.com",
   },
   {
     icon: "BiWorld",
     heading: "Visit us",
-    description: "Come and say hello at our office HQ.",
-    details:
-      "Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016",
+    description: "Come and say hello at my LinkedIn.",
+    details: "Harsh Sindhu",
   },
   {
     icon: "IoCall",
     heading: "Call us",
     description: "Mon - Fri From 8am to 5pm",
-    details: "+123 456 7869",
+    details: "+999999999",
   },
 ]
 
@@ -46,6 +45,22 @@ const ContactDetails = () => {
           </div>
         )
       })}
+
+      {/* Add a link to download the resume */}
+      <div className="flex flex-col gap-[2px] p-3 text-sm text-richblack-200">
+        <div className="flex flex-row items-center gap-3">
+          <Icon1.BiDownload size={25} />
+          <h1 className="text-lg font-semibold text-richblack-5">
+            <a
+              className="font-medium text-yellow-100"
+              href="https://drive.google.com/file/d/1lf09Hmro15Vsq6wa-ddgbPwKWsBBZIsG/view"
+              download="https://drive.google.com/file/d/1lf09Hmro15Vsq6wa-ddgbPwKWsBBZIsG/view"
+            >
+              Download My Resume
+            </a>
+          </h1>
+        </div>
+      </div>
     </div>
   )
 }

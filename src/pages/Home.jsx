@@ -32,16 +32,16 @@ function Home() {
 
         {/* Heading */}
         <div className="text-center text-4xl font-semibold">
-          Empower Your Future with
+        Empower your future with
           <HighlightText text={"Coding Skills"} />
         </div>
 
         {/* Sub Heading */}
         <div className="-mt-3 w-[90%] text-center text-lg font-bold text-richblack-300">
-          With our online coding courses, you can learn at your own pace, from
-          anywhere in the world, and get access to a wealth of resources,
-          including hands-on projects, quizzes, and personalized feedback from
-          instructors.
+          With our online coding courses, you have the flexibility to learn at
+          your own pace, from any corner of the world. Gain access to a rich
+          array of resources, featuring hands-on projects, quizzes, and
+          personalized feedback from our dedicated instructors.
         </div>
 
         {/* CTA Buttons */}
@@ -182,7 +182,7 @@ function Home() {
         <InstructorSection />
 
         {/* Reviws from Other Learner */}
-        <h1 className="text-center text-4xl font-semibold mt-8">
+        <h1 className="mt-8 text-center text-4xl font-semibold">
           Reviews from other learners
         </h1>
         <ReviewSlider />
